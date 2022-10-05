@@ -1,2 +1,2 @@
 # VaultCore.VaultGUICustomWindowsAPI
-Library containig interfaces and code to allow a vault emulation core to define custom windows
+Library containig interfaces and code to allow a vault emulation core to define custom windows in VaultGUI
