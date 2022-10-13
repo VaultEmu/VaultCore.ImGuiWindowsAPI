@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Deterministic>true</Deterministic>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>VaultGUI.ImguiWindowsAPI</RootNamespace>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>VaultGUI.ImguiWindowsAPI</PackageId>
+        <Authors>Chris Butler</Authors>
+        <PackageDescription>Library containing interfaces to allow a vault emulation core to define custom windows in VaultGUI</PackageDescription>
+        <RepositoryUrl>https://github.com/VaultEmu/VaultGUI.ImguiWindowsAPI</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <DebugSymbols>true</DebugSymbols>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ImGui.NET" Version="1.87.3" />
+      <PackageReference Include="MinVer" Version="4.2.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="VaultCore.CoreAPI" Version="0.1.0" />
+    </ItemGroup>
+
+</Project>
