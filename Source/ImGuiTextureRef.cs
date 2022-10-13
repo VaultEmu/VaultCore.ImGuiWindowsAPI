@@ -1,6 +1,6 @@
 using VaultCore.Rendering;
 
-namespace VaultGUI.ImGuiWindowsAPI;
+namespace VaultCore.ImGuiWindowsAPI;
 
 //Represents a reference to a Texture that ImGui can use
 public class ImGuiTextureRef : IEquatable<ImGuiTextureRef>

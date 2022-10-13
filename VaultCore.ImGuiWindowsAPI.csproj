@@ -5,12 +5,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>VaultGUI.ImguiWindowsAPI</RootNamespace>
+        <RootNamespace>VaultCore.ImguiWindowsAPI</RootNamespace>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <PackageId>VaultGUI.ImGuiWindowsAPI</PackageId>
+        <PackageId>VaultCore.ImGuiWindowsAPI</PackageId>
         <Authors>Chris Butler</Authors>
-        <PackageDescription>Library containing interfaces to allow a vault emulation core to define custom windows in VaultGUI</PackageDescription>
-        <RepositoryUrl>https://github.com/VaultEmu/VaultGUI.ImguiWindowsAPI</RepositoryUrl>
+        <PackageDescription>Library containing interfaces to allow a vault emulation core to define custom ImGui windows in frontends that use ImGui</PackageDescription>
+        <RepositoryUrl>https://github.com/VaultEmu/VaultCore.ImguiWindowsAPI</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <DebugSymbols>true</DebugSymbols>
         <IncludeSymbols>true</IncludeSymbols>

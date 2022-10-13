@@ -1,7 +1,7 @@
 ﻿using VaultCore.CoreAPI;
 using VaultCore.Rendering;
 
-namespace VaultGUI.ImGuiWindowsAPI;
+namespace VaultCore.ImGuiWindowsAPI;
 
 //Feature for converting textures for use with ImGui
 public interface IImGuiTextureManager : IFeature
