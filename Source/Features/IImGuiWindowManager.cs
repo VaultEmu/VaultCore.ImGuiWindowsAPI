@@ -1,6 +1,6 @@
 using VaultCore.CoreAPI;
 
-namespace VaultGUI.ImguiWindowsAPI;
+namespace VaultGUI.ImGuiWindowsAPI;
 
 //IFeature for interfacing with the ImGui Window Manager in VaultGUI
 public interface IImGuiWindowManager : IFeature
