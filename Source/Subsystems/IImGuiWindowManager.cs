@@ -1,7 +1,9 @@
-namespace Vault;
+using VaultCore.CoreAPI;
 
-//Subsystem for interfacing with the ImGui Window Manager in VaultGUI
-public interface IImGuiWindowManager : ISubsystem
+namespace VaultGUI.ImguiWindowsAPI;
+
+//IFeature for interfacing with the ImGui Window Manager in VaultGUI
+public interface IImGuiWindowManager : IFeature
 {
     //Returns true if any window is set as the full screen window
     public bool IsAnyWindowFullScreen { get; }

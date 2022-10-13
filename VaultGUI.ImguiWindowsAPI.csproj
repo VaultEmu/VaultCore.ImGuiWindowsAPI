@@ -7,7 +7,6 @@
         <Nullable>enable</Nullable>
         <RootNamespace>VaultGUI.ImguiWindowsAPI</RootNamespace>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>VaultGUI.ImguiWindowsAPI</PackageId>
         <Authors>Chris Butler</Authors>
         <PackageDescription>Library containing interfaces to allow a vault emulation core to define custom windows in VaultGUI</PackageDescription>
@@ -25,7 +24,7 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="VaultCore.CoreAPI" Version="0.1.0" />
+      <PackageReference Include="VaultCore.CoreAPI" Version="0.1.3" />
     </ItemGroup>
 
 </Project>

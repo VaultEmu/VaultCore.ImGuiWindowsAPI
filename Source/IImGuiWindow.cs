@@ -1,6 +1,6 @@
 using ImGuiNET;
 
-namespace Vault;
+namespace VaultGUI.ImguiWindowsAPI;
 
 //Interface to implement to create a Custom ImGui window for the Vault GUI application
 public interface IImGuiWindow : IDisposable
