@@ -20,6 +20,9 @@ public interface IImGuiWindowManager : IFeature
     //Sets this window as the full screen window
     public void SetWindowAsFullscreen(IImGuiWindow window);
     
+    //Gets a window by its type
+    public T GetWindow<T>() where T : IImGuiWindow;
+    
     //Clears any window that is full screen
     public void ClearFullscreenWindow();
 }
