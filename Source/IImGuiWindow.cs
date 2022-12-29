@@ -2,7 +2,7 @@ using ImGuiNET;
 
 namespace VaultCore.ImGuiWindowsAPI;
 
-//Interface to implement to create a Custom ImGui window for the Vault GUI application
+//Interface to implement to create a Custom ImGui window for a Vault GUI application
 public interface IImGuiWindow : IDisposable
 {
     //Order Of Execution for functions
