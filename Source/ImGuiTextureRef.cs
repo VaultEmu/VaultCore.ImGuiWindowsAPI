@@ -2,9 +2,14 @@ using VaultCore.Rendering;
 
 namespace VaultCore.ImGuiWindowsAPI;
 
-//Represents a reference to a Texture that ImGui can use
+/// <summary>
+/// Represents a reference to a Texture that ImGui can use
+/// </summary>
 public class ImGuiTextureRef : IEquatable<ImGuiTextureRef>
 {
+    /// <summary>
+    /// ImGui Texture Pointer, use this im ImGui Calls to use this texture
+    /// </summary>
     public readonly IntPtr ImGuiRef;
 
     public ImGuiTextureRef(IntPtr imGuiRef)
