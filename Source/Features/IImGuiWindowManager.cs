@@ -3,7 +3,7 @@ using VaultCore.CoreAPI;
 namespace VaultCore.ImGuiWindowsAPI;
 
 /// <summary>
-/// Feature for interfacing with the ImGui Window Manager in VaultGUI
+/// Feature for interfacing with an ImGui Window Manager in a Vault GUI application
 /// </summary>
 public interface IImGuiWindowManager : IVaultCoreFeature
 {
