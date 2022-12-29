@@ -25,7 +25,7 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="VaultCore.CoreAPI" Version="0.1.5-alpha.0.6" />
-      <PackageReference Include="VaultCore.Rendering" Version="0.1.5" />
+      <PackageReference Include="VaultCore.Rendering" Version="0.1.6-alpha.0.1" />
     </ItemGroup>
 
 </Project>
