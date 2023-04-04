@@ -51,7 +51,7 @@ public abstract class ImGuiWindow : IDisposable
     
     //Data for adding this window to the "Windows" Menu. Can return null
     //to not add this window to the windows menu
-    public virtual WindowMenuItem? WindowsMenuPath => new WindowMenuItem(WindowTitle);
+    public virtual WindowMenuItem? WindowsMenuItemData => new WindowMenuItem(WindowTitle);
 
     //Call to run any updates on the windows in the update pass
     public virtual void OnUpdate() { }
