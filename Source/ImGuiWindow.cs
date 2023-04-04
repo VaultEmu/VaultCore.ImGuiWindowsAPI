@@ -47,11 +47,11 @@ public abstract class ImGuiWindow : IDisposable
     public virtual ImGuiWindowFlags WindowFlags => ImGuiWindowFlags.None;
     
     //If true, then the user cannot close this window
-    public bool WindowAlwaysOpen => false;
+    public virtual bool WindowAlwaysOpen => false;
     
     //Data for adding this window to the "Windows" Menu. Can return null
     //to not add this window to the windows menu
-    public WindowMenuItem? WindowsMenuPath => new WindowMenuItem(WindowTitle);
+    public virtual WindowMenuItem? WindowsMenuPath => new WindowMenuItem(WindowTitle);
 
     //Call to run any updates on the windows in the update pass
     public virtual void OnUpdate() { }
