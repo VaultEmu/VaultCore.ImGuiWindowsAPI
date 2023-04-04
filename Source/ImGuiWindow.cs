@@ -17,16 +17,11 @@ public abstract class ImGuiWindow : IDisposable
     // - OnDrawImGuiWindowContent()
     // - OnAfterDrawImGuiWindow()
 
-    protected ImGuiWindow(string windowTitle)
-    {
-        WindowTitle = windowTitle;
-    }
-
-    //Name to show on the window
-    public string WindowTitle { get; }
-    
     //If true, the window is open in the GUI
     public bool WindowIsOpen { get; set; }
+    
+    //Name to show on the window
+    public abstract string WindowTitle { get; }
 
     //Window ID
     //If Window title is not constant, override this to provide a consistent, unique ID for the window
