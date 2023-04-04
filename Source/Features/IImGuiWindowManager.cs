@@ -16,32 +16,25 @@ public interface IImGuiWindowManager : IVaultCoreFeature
     /// Returns the window that is currently full screen, or null if no window is full screen
     /// </summary>
     /// <returns>The window currently fullscreen, or null if none is</returns>
-    public IImGuiWindow? GetFullscreenWindow();
+    public ImGuiWindow? GetFullscreenWindow();
 
     /// <summary>
     /// Registers a window in the manager
     /// </summary>
     /// <param name="window">Window to register to drawing</param>
-    public void RegisterWindow(IImGuiWindow window);
+    public void RegisterWindow(ImGuiWindow window);
 
     /// <summary>
     /// Unregisters a window in the manager
     /// </summary>
     /// <param name="window">Window to unregister for drawing</param>
-    public void UnregisterWindow(IImGuiWindow window);
+    public void UnregisterWindow(ImGuiWindow window);
 
     /// <summary>
     /// Sets this window as the full screen window
     /// </summary>
     /// <param name="window">Window to set fullscreen</param>
-    public void SetWindowAsFullscreen(IImGuiWindow window);
-
-    /// <summary>
-    /// Gets a window by its type. If window does not exist, null is returned
-    /// </summary>
-    /// <typeparam name="T">Type of the window to get (Type should inherit from IImGuiWindow)</typeparam>
-    /// <returns>The window of the type requested, or null if no window of that type is registered</returns>
-    public T? GetWindow<T>() where T : IImGuiWindow;
+    public void SetWindowAsFullscreen(ImGuiWindow window);
 
     /// <summary>
     /// Clears any window that is full screen
