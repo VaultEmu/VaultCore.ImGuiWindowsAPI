@@ -5,20 +5,36 @@ namespace VaultCore.ImGuiWindowsAPI;
 //Base class to implement to create a Custom ImGui window for the Vault GUI application
 public abstract class ImGuiWindow : IDisposable
 {
-    //Order Of Execution for functions
+    //Defines how the window should appear in the "Windows" menu
+    public class WindowMenuItem
+    {
+        //Path in the menu. If the path is seperated by "/" then submenus will be created
+        //e.g. "MyMenu/ThisWindow" Will create a Submenu MyMenu with ThisWindow as an item inside it
+        public string MenuPath;
+        
+        //Order to add this to the "Windows" Menu, lower is higher up
+        //If there is a difference of more then 100 between items, a 
+        //separator will be added before the item
+        public int Priority;
 
-    //WINDOW UPDATE STEP
-    //foreach Window:
+        public WindowMenuItem(string menuPath, int priority = 0)
+        {
+            MenuPath = menuPath;
+            Priority = priority;
+        }
+    }
+    
+    // Order Of Execution for functions
+
+    // WINDOW UPDATE STEP
+    // foreach Window:
     // - OnUpdate()
     //
-    //WINDOW DRAW STEP
-    ////foreach Window that has WindowIsOpen == true:
+    // WINDOW DRAW STEP
+    // foreach Window that has WindowIsOpen == true:
     // - OnBeforeDrawImGuiWindow()
     // - OnDrawImGuiWindowContent()
     // - OnAfterDrawImGuiWindow()
-
-    //If true, the window is open in the GUI
-    public bool WindowIsOpen { get; set; }
     
     //Name to show on the window
     public abstract string WindowTitle { get; }
@@ -29,6 +45,13 @@ public abstract class ImGuiWindow : IDisposable
 
     //ImGui window flags for this window
     public virtual ImGuiWindowFlags WindowFlags => ImGuiWindowFlags.None;
+    
+    //If true, then the user cannot close this window
+    public bool WindowAlwaysOpen => false;
+    
+    //Data for adding this window to the "Windows" Menu. Can return null
+    //to not add this window to the windows menu
+    public WindowMenuItem? WindowsMenuPath => new WindowMenuItem(WindowTitle);
 
     //Call to run any updates on the windows in the update pass
     public virtual void OnUpdate() { }
