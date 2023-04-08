@@ -49,6 +49,9 @@ public abstract class ImGuiWindow : IDisposable
     //If true, then the user cannot close this window
     public virtual bool WindowAlwaysOpen => false;
     
+    //If there are not existing window open settings for this window, should this window be open by default?
+    public virtual bool WindowOpenByDefault => true;
+    
     //Data for adding this window to the "Windows" Menu. Can return null
     //to not add this window to the windows menu
     public virtual WindowMenuItem? WindowsMenuItemData => new WindowMenuItem(WindowTitle);

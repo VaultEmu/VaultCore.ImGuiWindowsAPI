@@ -31,6 +31,13 @@ public interface IImGuiWindowManager : IVaultCoreFeature
     public void UnregisterWindow(ImGuiWindow window);
 
     /// <summary>
+    /// Unregisters a window in the manager
+    /// </summary>
+    /// <param name="window">Window to set open state on</param>
+    /// <param name="open">is the window open (been drawn)</param>
+    public void SetWindowOpen(ImGuiWindow window, bool open);
+
+    /// <summary>
     /// Sets this window as the full screen window
     /// </summary>
     /// <param name="window">Window to set fullscreen</param>
