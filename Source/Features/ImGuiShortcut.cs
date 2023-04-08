@@ -28,7 +28,7 @@ public class ImGuiShortcut
 
     public ImGuiShortcut(ImGuiKey key, ImGuiModFlags modifiers = ImGuiModFlags.None)
     {
-        if(Key < ImGuiKey.NamedKey_BEGIN || Key > ImGuiKey.KeypadEqual)
+        if(key < ImGuiKey.NamedKey_BEGIN || key > ImGuiKey.KeypadEqual)
         {
             throw new ArgumentException($"{key} is not a valid value for a shortcut key");
         }
