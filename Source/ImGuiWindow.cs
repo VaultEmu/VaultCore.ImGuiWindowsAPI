@@ -8,38 +8,23 @@ public abstract class ImGuiWindow : IDisposable
     //Defines how the window should appear in the "Windows" menu
     public class WindowMenuItem
     {
-        public class OpenWindowShortcut
-        {
-            //Modifier keys to press along with shotcut key - Or multiple keys together as needed
-            public readonly ImGuiModFlags ShortcutModifiers;
-            
-            //Key to press in combination with the modifiers to trigger this shortcut
-            public readonly ImGuiKey ShortcutKey;
-
-            public OpenWindowShortcut(ImGuiKey shortcutKey, ImGuiModFlags shortcutModifiers = ImGuiModFlags.None)
-            {
-                ShortcutModifiers = shortcutModifiers;
-                ShortcutKey = shortcutKey;
-            }
-        }
-        
         //Path in the menu. If the path is seperated by "/" then submenus will be created
         //e.g. "MyMenu/ThisWindow" Will create a Submenu MyMenu with ThisWindow as an item inside it
         public string MenuPath;
         
         //The shortcut to open this window, will be displayed next to the menu item
         //Return null for no shortcut
-        public OpenWindowShortcut? Shortcut;
+        public ImGuiShortcut? Shortcut;
         
         //Order to add this to the "Windows" Menu, lower is higher up
         //If there is a difference of more then 100 between items, a 
         //separator will be added before the item
         public int Priority;
 
-        public WindowMenuItem(string menuPath, OpenWindowShortcut? openWindowShortcut = null, int priority = 0)
+        public WindowMenuItem(string menuPath, ImGuiShortcut? shortcut = null, int priority = 0)
         {
             MenuPath = menuPath;
-            Shortcut = openWindowShortcut;
+            Shortcut = shortcut;
             Priority = priority;
         }
     }
