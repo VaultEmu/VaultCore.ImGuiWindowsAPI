@@ -3,6 +3,9 @@ using ImGuiNET;
 
 namespace VaultCore.ImGuiWindowsAPI;
 
+/// <summary>
+/// Represents a Keyboard shortcut that ImGui can check is triggered or display in a menu
+/// </summary>
 public class ImGuiShortcut
 {
     private static string[] GKeyNames = new []
