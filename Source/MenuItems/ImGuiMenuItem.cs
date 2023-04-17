@@ -4,19 +4,20 @@
 public class ImGuiMenuItem
 {
     /// <summary>
-    /// Path in the menu. If the path is seperated by "/" then submenus will be created
+    /// Path in the item. If the path is seperated by "/" then submenus will be created
+    /// The path must at least be 2 items long, as items cannot be added the the root menu
     /// e.g. "Test/MyMenu/ThisWindow" Will create a Menu "Test" with a submenu "MyMenu" with "ThisWindow" as an item inside it
     /// </summary>
     public string MenuPath;
         
     /// <summary>
-    /// The shortcut to open this window, will be displayed next to the menu item
+    /// The shortcut to select this item, will be displayed next to the menu item
     /// If null then no shortcut is set
     /// </summary>
     public ImGuiShortcut? Shortcut;
         
     /// <summary>
-    /// Order to add this to its Menu, lower is further to the right in root menus and higher up in submenus
+    /// Order to add this to its Sub Menu, lower is higher up in the submenu
     /// If there is a difference of more then 100 between items, a separator will be added before the item
     /// </summary>
     public int Priority;
@@ -51,6 +52,6 @@ public class ImGuiMenuItem
         Shortcut = shortcut;
         Priority = priority;
         MenuAction = menuAction;
-        isItemChecked = isItemChecked;
+        IsItemChecked = isItemChecked;
     }
 }
