@@ -11,7 +11,7 @@ public class ImGuiMenuItem
         
     /// <summary>
     /// The shortcut to open this window, will be displayed next to the menu item
-    /// Return null for no shortcut
+    /// If null then no shortcut is set
     /// </summary>
     public ImGuiShortcut? Shortcut;
         
@@ -25,12 +25,32 @@ public class ImGuiMenuItem
     /// What to do when this menu item is selected
     /// </summary>
     public Action MenuAction;
+    
+    /// <summary>
+    /// Returns if the menu item should be shown as "Selected" in the menu with a tick
+    /// If null, then will not be selected
+    /// </summary>
+    public Func<bool>? IsItemChecked;
 
-    public ImGuiMenuItem(string menuPath, Action menuAction, ImGuiShortcut? shortcut = null, int priority = 0)
+    /// <summary>
+    /// Create a new ImGuiMenuItem
+    /// </summary>
+    /// <param name="menuPath">Path for the menu (See MenuPath)</param>
+    /// <param name="menuAction">Action to run when the menu item is selected (See MenuAction)</param>
+    /// <param name="shortcut">Shortcut to press to activate menu item (See Shortcut)</param>
+    /// <param name="isItemChecked">Function to check if item is selected (see IsItemChecked)</param>
+    /// <param name="priority">Priority of the menu item (See Priority)</param>
+    public ImGuiMenuItem(
+        string menuPath, 
+        Action menuAction, 
+        ImGuiShortcut? shortcut = null,
+        Func<bool>? isItemChecked = null,
+        int priority = 0)
     {
         MenuPath = menuPath;
         Shortcut = shortcut;
         Priority = priority;
         MenuAction = menuAction;
+        isItemChecked = isItemChecked;
     }
 }
