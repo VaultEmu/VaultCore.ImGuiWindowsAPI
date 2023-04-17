@@ -1,12 +1,12 @@
 using ImGuiNET;
 
 namespace VaultCore.ImGuiWindowsAPI;
-
-//Base class to implement to create a Custom ImGui window for the Vault GUI application
+/// <summary>
+/// Base class to implement to create a Custom ImGui window for the Vault GUI application
+/// </summary>
 public abstract class ImGuiWindow : IDisposable
 {
     // Order Of Execution for functions
-
     // WINDOW UPDATE STEP
     // foreach Window:
     // - OnUpdate()
@@ -17,34 +17,52 @@ public abstract class ImGuiWindow : IDisposable
     // - OnDrawImGuiWindowContent()
     // - OnAfterDrawImGuiWindow()
     
-    //Name to show on the window
+    /// <summary>
+    /// Name to show on the window
+    /// </summary>
     public abstract string WindowTitle { get; }
 
-    //Window ID
-    //If Window title is not constant, override this to provide a consistent, unique ID for the window
+    /// <summary>
+    /// Window ID
+    /// If Window title is not constant, override this to provide a consistent, unique ID for the window
+    /// </summary>
     public virtual string WindowID => WindowTitle;
 
-    //ImGui window flags for this window
+    /// <summary>
+    /// ImGui window flags for this window
+    /// </summary>
     public virtual ImGuiWindowFlags WindowFlags => ImGuiWindowFlags.None;
     
-    //If true, then the user cannot close this window
-    public virtual bool WindowAlwaysOpen => false;
+    /// <summary>
+    /// If true, then this window is open (is drawn by ImGui)
+    /// </summary>
+    public virtual bool IsWindowOpen => true;
     
-    //If there are not existing window open settings for this window, should this window be open by default?
-    public virtual bool WindowOpenByDefault => true;
+    /// <summary>
+    /// If true, then the close button will be showed in the window title bar
+    /// </summary>
+    public virtual bool ShowCloseButton => true;
 
-    //Call to run any updates on the windows in the update pass
+    /// <summary>
+    /// Call to run any updates on the windows in the update pass
+    /// </summary>
     public virtual void OnUpdate() { }
 
-    //Called to run any ImGui commands before beginning to draw the window
+    /// <summary>
+    /// Called to run any ImGui commands before beginning to draw the window
+    /// </summary>
     public virtual void OnBeforeDrawImGuiWindow() { }
 
-    //Called to draw a window's content
+    /// <summary>
+    /// Called to draw a window's content
+    /// </summary>
     public virtual void OnDrawImGuiWindowContent() { }
 
-    //Called to run any ImGui commands after drawing the window
+    /// <summary>
+    /// Called to run any ImGui commands after drawing the window
+    /// </summary>
     public virtual void OnAfterDrawImGuiWindow() { }
-
+    
     protected virtual void Dispose(bool disposing) { }
 
     public void Dispose()
