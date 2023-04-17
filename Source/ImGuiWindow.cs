@@ -1,6 +1,7 @@
 using ImGuiNET;
 
 namespace VaultCore.ImGuiWindowsAPI;
+
 /// <summary>
 /// Base class to implement to create a Custom ImGui window for the Vault GUI application
 /// </summary>
@@ -16,7 +17,7 @@ public abstract class ImGuiWindow : IDisposable
     // - OnBeforeDrawImGuiWindow()
     // - OnDrawImGuiWindowContent()
     // - OnAfterDrawImGuiWindow()
-    
+
     /// <summary>
     /// Name to show on the window
     /// </summary>
@@ -32,12 +33,12 @@ public abstract class ImGuiWindow : IDisposable
     /// ImGui window flags for this window
     /// </summary>
     public virtual ImGuiWindowFlags WindowFlags => ImGuiWindowFlags.None;
-    
+
     /// <summary>
     /// If true, then this window is open (is drawn by ImGui)
     /// </summary>
-    public virtual bool IsWindowOpen => true;
-    
+    public virtual bool IsWindowOpen { get; set; } = true;
+
     /// <summary>
     /// If true, then the close button will be showed in the window title bar
     /// </summary>
@@ -62,7 +63,7 @@ public abstract class ImGuiWindow : IDisposable
     /// Called to run any ImGui commands after drawing the window
     /// </summary>
     public virtual void OnAfterDrawImGuiWindow() { }
-    
+
     protected virtual void Dispose(bool disposing) { }
 
     public void Dispose()
